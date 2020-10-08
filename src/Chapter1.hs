@@ -629,7 +629,7 @@ sumLast2 :: Int -> Int
 sumLast2 n = firstLast + secondLast
    where
     firstLast = mod (abs n) 10
-    secondLast = div ((mod (abs n) 100) - (mod (abs n) 10)) 10
+    secondLast = mod (div (abs n) 10) 10
 
 
 
