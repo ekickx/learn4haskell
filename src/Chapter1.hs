@@ -480,7 +480,7 @@ Implement a function that returns the last digit of a given number.
 -}
 -- DON'T FORGET TO SPECIFY THE TYPE IN HERE
 lastDigit :: Int -> Int
-lastDigit n = mod n 10
+lastDigit n = mod (abs n) 10
 
 
 {- |
@@ -546,7 +546,8 @@ mid :: Int -> Int -> Int -> Int
 mid x y z
     | ((x > y) && (x < z)) || ((x < y) && (x > z)) = x
     | ((y > x) && (y < z)) || ((y < x) && (y > z)) = y
-    | otherwise = z
+    | ((z > y) && (z < x)) || ((z < y) && (z > x)) = z
+    | otherwise = 1
 
 {- |
 =⚔️= Task 8
